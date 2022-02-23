@@ -15,10 +15,14 @@
     <title>Joux Ligutti</title>
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="img/favicon.png">
-    <link rel="apple-touch-icon" href="img/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- plugins -->
     <link rel="stylesheet" href="css/plugins.css" />
@@ -136,7 +140,7 @@
                 <div class="text-center xs-padding-50px-top">
                     <h1 class="text-white font-size48 md-font-size44 sm-font-size36 xs-font-size28 font-weight-600 margin-40px-bottom sm-margin-30px-bottom xs-margin-20px-bottom">Joux Ligutti</h1>
                     <p class="text-white font-size22 md-font-size20 sm-font-size18 xs-font-size16 font-weight-300 width-75 xs-width-90 center-col margin-40px-bottom sm-margin-30px-bottom xs-margin-25px-bottom">Front-End Developer. UX Designer</p>
-                    <a href="javascript:void(0)" class="btn1">see recent projects</a>
+                    <a href="javascript:void(0)" data-scroll-nav="4" class="btn1">see recent projects</a>
                 </div>
             </div>
         </section>
@@ -192,7 +196,8 @@
                                     <h5 class="card-title font-size22 xs-font-size20">Dev Logger</h5>
                                     <p class="card-text">Angular</p>
                                     <p class="card-text no-margin-bottom">An app that creates and updates development logs.</p><br>
-                                    <a class="btn2" href="#">Demo</a> | <a class="btn2" href="#">Code</a>
+                                    <!-- Button trigger modal -->
+                                    <a class="btn2" data-toggle="modal" data-target="#exampleModal" href="#">Demo</a> | <a class="btn2" href="https://github.com/empressarts/dev-logger/blob/main/log-form/log-form.component.ts" target="_blank">Code</a>
                                 </div>
                             </div>
                         </div>
@@ -214,7 +219,7 @@
                                     <h5 class="card-title font-size22 xs-font-size20">Canvas Paint Art</h5>
                                     <p class="card-text">Vanilla Javascript</p>
                                     <p class="card-text no-margin-bottom">Here is a fun app that allows you to paint on a canvas in multiple colors.</p><br>
-                                    <a class="btn2" href="#">Demo</a> | <a class="btn2" href="#">Code</a>
+                                    <a class="btn2" href="https://empressarts.github.io/canvas-art/" target="_blank">Demo</a> | <a class="btn2" href="https://github.com/empressarts/canvas-art" target="_blank">Code</a>
                                 </div>
                             </div>
                         </div>
@@ -225,8 +230,8 @@
                                     <img src="img/feature-3.jpg" alt="..." />
                                     <div class="item-img-overlay valign text-center">
                                         <div class="overlay-info width-100 vertical-center">
-                                            <a href="https://www.youtube.com/watch?v=f7FR3eWucuI" class="magnific-video item">
-                                                <i class="fab fa-youtube"></i>
+                                            <a href="img/feature-3.jpg" class="item" data-title="Featured item 3">
+                                                <i class="fas fa-search"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -236,7 +241,7 @@
                                     <h5 class="card-title font-size22 xs-font-size20">Simple Clock</h5>
                                     <p class="card-text">Vanilla Javascript</p>
                                     <p class="card-text no-margin-bottom">This is a basic clock created using Javascript</p><br>
-                                    <a class="btn2" href="#">Demo</a> | <a class="btn2" href="#">Code</a>
+                                    <a class="btn2" href="https://empressarts.github.io/clock/" target="_blank">Demo</a> | <a class="btn2" href="https://github.com/empressarts/clock" target="_blank">Code</a>
                                 </div>
                             </div>
                         </div>
@@ -246,11 +251,34 @@
             <br>
             <br>
             <div class="col-12 center-col margin-70px-bottom sm-margin-40px-bottom xs-margin-30px-bottom text-center">
-                <a class="btn1" href="#">See other projects in Github</a>
+                <a class="btn1" href="https://github.com/empressarts" target="_blank">See other projects in Github</a>
             </div>
 
         </section>
         <!-- end feature-box section -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Dev Logger Demo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe id="Geeks3" width="450" height="350" src="https://www.youtube.com/embed/LOCQ4ZDXTOo" frameborder="0" allowfullscreen>
+                            </iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary"><a href="https://github.com/empressarts/dev-logger/blob/main/log-form/log-form.component.ts" target="_blank"> See code</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal -->
 
 
 

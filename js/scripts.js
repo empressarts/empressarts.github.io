@@ -22,7 +22,7 @@
         11. Child Tab
         12. Vertical Tab
         
-    ---------------------------------- */    
+    ---------------------------------- */
 
 $(function() {
 
@@ -38,13 +38,13 @@ $(function() {
 
     // scrollIt
     $.scrollIt({
-      upKey: 38,                // key code to navigate to the next section
-      downKey: 40,              // key code to navigate to the previous section
-      easing: 'swing',          // the easing function for animation
-      scrollTime: 600,          // how long (in ms) the animation takes
-      activeClass: 'active',    // class given to the active nav element
-      onPageChange: null,       // function(pageIndex) that is called when page is changed
-      topOffset: -70            // offste (in px) for fixed top navigation
+        upKey: 38, // key code to navigate to the next section
+        downKey: 40, // key code to navigate to the previous section
+        easing: 'swing', // the easing function for animation
+        scrollTime: 600, // how long (in ms) the animation takes
+        activeClass: 'active', // class given to the active nav element
+        onPageChange: null, // function(pageIndex) that is called when page is changed
+        topOffset: -70 // offste (in px) for fixed top navigation
     });
 
 
@@ -69,43 +69,43 @@ $(function() {
 
     // Sidemenu toggle
     if ($("#sidebar_toggle").length) {
-       $("body").addClass("sidebar-menu");
-       $("#sidebar_toggle").on("click", function () {
-          $(".sidebar-menu").toggleClass("active");
-          $(".side-menu").addClass("side-menu-active"), $("#close_sidebar").fadeIn(700)
-       }), $("#close_sidebar").on("click", function () {
-          $(".side-menu").removeClass("side-menu-active"), $(this).fadeOut(200), $(".sidebar-menu").removeClass("active")
-       }), $("#btn_sidebar_colse").on("click", function () {
-          $(".side-menu").removeClass("side-menu-active"), $("#close_sidebar").fadeOut(200), $(".sidebar-menu").removeClass("active")
-       });
+        $("body").addClass("sidebar-menu");
+        $("#sidebar_toggle").on("click", function() {
+            $(".sidebar-menu").toggleClass("active");
+            $(".side-menu").addClass("side-menu-active"), $("#close_sidebar").fadeIn(700)
+        }), $("#close_sidebar").on("click", function() {
+            $(".side-menu").removeClass("side-menu-active"), $(this).fadeOut(200), $(".sidebar-menu").removeClass("active")
+        }), $("#btn_sidebar_colse").on("click", function() {
+            $(".side-menu").removeClass("side-menu-active"), $("#close_sidebar").fadeOut(200), $(".sidebar-menu").removeClass("active")
+        });
     }
 
     // Navbar scrolling background
-    wind.on("scroll",function () {
+    wind.on("scroll", function() {
 
         var bodyScroll = wind.scrollTop(),
             navbar = $(".navbar"),
             lightbg = $(".bg-light-gray .logo> img"),
             logo = $(".navbar .logo> img");
 
-        if(bodyScroll > 100){
+        if (bodyScroll > 100) {
             navbar.addClass("nav-scroll");
             logo.attr('src', 'img/logo-dark.png');
             lightbg.attr('src', 'img/logo-dark.png');
 
-        }else{
+        } else {
             navbar.removeClass("nav-scroll");
             logo.attr('src', 'img/logo-light.png');
             lightbg.attr('src', 'img/logo-dark.png');
         }
     });
-    
-     var windowsize = wind.width();
-        if (windowsize <= 991) {
-        $('.navbar-nav .nav-link').on("click", function(){
+
+    var windowsize = wind.width();
+    if (windowsize <= 991) {
+        $('.navbar-nav .nav-link').on("click", function() {
             $('.navbar-collapse.show').removeClass('show');
         });
-      }
+    }
 
     // Vegas Active Code
     $("body").vegas({
@@ -116,64 +116,64 @@ $(function() {
         firstTransitionDuration: 5000,
         transitionDuration: 2000,
         overlay: true,
-            slides: [
+        slides: [
             { src: "img/bg-1.jpg" },
             { src: "img/bg-2.jpg" },
             { src: "img/bg-3.jpg" },
-            { src: "img/bg-4.jpg" },   
+            { src: "img/bg-4.jpg" },
         ]
     });
 
     $(document).ready(function() {
-       
+
         // Default owlCarousel
         $('.owl-carousel').owlCarousel({
             items: 1,
-            loop:true,
+            loop: true,
             margin: 0,
-            autoplay:true,
-            smartSpeed:500
+            autoplay: true,
+            smartSpeed: 500
         });
 
         $('.gallery').each(function() {
-          var $container = $(this);
-          var $imageLinks = $container.find('.item');
+            var $container = $(this);
+            var $imageLinks = $container.find('.item');
 
-          var items = [];
-          $imageLinks.each(function() {
-            var $item = $(this);
-            var type = 'image';
-            if ($item.hasClass('magnific-video')) {
-              type = 'iframe';
-            }
-            var magItem = {
-              src: $item.attr('href'),
-              type: type
-            };
-            magItem.title = $item.data('title');    
-            items.push(magItem);
+            var items = [];
+            $imageLinks.each(function() {
+                var $item = $(this);
+                var type = 'image';
+                if ($item.hasClass('magnific-video')) {
+                    type = 'iframe';
+                }
+                var magItem = {
+                    src: $item.attr('href'),
+                    type: type
+                };
+                magItem.title = $item.data('title');
+                items.push(magItem);
             });
 
-          $imageLinks.magnificPopup({
-            mainClass: 'mfp-fade',
-            items: items,
-            gallery:{
-                enabled:true,
-                tPrev: $(this).data('prev-text'),
-                tNext: $(this).data('next-text')
-            },
-            type: 'image',
-            callbacks: {
-              beforeOpen: function() {
-                var index = $imageLinks.index(this.st.el);
-                if (-1 !== index) {
-                  this.goTo(index);
+            $imageLinks.magnificPopup({
+                mainClass: 'mfp-fade',
+                items: items,
+                gallery: {
+                    enabled: true,
+                    tPrev: $(this).data('prev-text'),
+                    tNext: $(this).data('next-text')
+                },
+                type: 'image',
+                callbacks: {
+                    beforeOpen: function() {
+                        var index = $imageLinks.index(this.st.el);
+                        if (-1 !== index) {
+                            this.goTo(index);
+                        }
+                    }
                 }
-              }
-            }
-          });
+            });
         });
-           
+
     });
 
     //Horizontal Tab
@@ -225,4 +225,15 @@ $(function() {
         });
     }
 
+});
+
+//Video Modal
+$(document).ready(function() {
+    var url = $("#Geeks3").attr('src');
+    $("#Geeks2").on('hide.bs.modal', function() {
+        $("#Geeks3").attr('src', '');
+    });
+    $("#Geeks2").on('show.bs.modal', function() {
+        $("#Geeks3").attr('src', url);
+    });
 });
